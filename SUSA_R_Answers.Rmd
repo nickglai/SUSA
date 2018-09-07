@@ -1,0 +1,36 @@
+---
+title: "SUSA - A PrimeR"
+author: "Nicholas Lai"
+date: "September 6, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, cache = TRUE)
+
+#install.packages(c('ggplot2', 'dplyr', 'viridis'), repos = 'https://cran.cnr.berkeley.edu/')
+
+library(ggplot2) #data visualization framework
+library(dplyr) #tidy data
+library(viridis) #Colorblind-friendly gradients
+```
+
+```{r}
+usa <- map_data("usa")
+counties <- map_data("county")
+county_data <- read.csv("acs2015_county_data.csv")
+head(county_data)
+county_data$County <- sapply(county_data$County, tolower)
+head(counties)
+colnames(county_data)[colnames(county_data)=="County"] <- "subregion"
+
+usa_county_data <- inner_join(counties, county_data, by = "subregion")
+
+head(usa_county_data)
+
+ggplot(data = usa, aes(x=long, y = lat, group = group)) + geom_polygon(fill = 'gray')+
+  coord_fixed(1.3) + geom_polygon(data = usa_county_data, aes(fill = White), color = "white") + scale_fill_viridis(option="magma")
+
+
+```
+

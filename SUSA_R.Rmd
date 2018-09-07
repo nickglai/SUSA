@@ -1,0 +1,56 @@
+---
+title: "SUSA - A PrimeR"
+author: "Nicholas Lai"
+date: "September 6, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, cache = TRUE)
+
+#install.packages(c('ggplot2', 'dplyr', 'viridis'), repos = 'https://cran.cnr.berkeley.edu/')
+
+library(ggplot2) #data visualization framework
+library(dplyr) #tidy data
+library(viridis) #Colorblind-friendly gradients
+```
+
+One of the most common uses of R is to generate beautiful data visualizations. In fact, many professional data journalism outfits such as FiveThirtyEight and The New York Times use R to create their graphics. 
+
+Today, we will be creating a graph of the United States by county. This may sound like a daunting first task, but because of the wonderful packages that the R community has produced, it will become clear that doing so is quite managable. 
+
+#Getting the Map
+
+The ggplot2 R package is one of the most powerful graphical tools available in R. One of the functions of the package allows us to extract map data for the US and for counties of the US.
+
+```{r map}
+usa <- map_data("usa")
+counties <- map_data("county")
+```
+
+We can read in census data using functions in R, and using the head function, we can inspect the data's structure. 
+
+```{r data}
+county_data <- read.csv("acs2015_county_data.csv")
+head(county_data)
+```
+
+In order to plot the data on a map, we need to merge the data with the map data. 
+
+```{r cleaning}
+county_data$County <- sapply(county_data$County, tolower)
+head(counties)
+colnames(county_data)[colnames(county_data)=="County"] <- "subregion"
+
+usa_county_data <- inner_join(counties, county_data, by = "subregion")
+
+head(usa_county_data)
+```
+
+After we have the merged data, we are ready to plot!
+
+```{r plotting}
+ggplot(data = usa, aes(x=long, y = lat, group = group)) + geom_polygon(fill = 'gray')+
+  coord_fixed(1.3) + geom_polygon(data = usa_county_data, aes(fill = White), color = "white") + scale_fill_viridis(option="magma")
+```
+
