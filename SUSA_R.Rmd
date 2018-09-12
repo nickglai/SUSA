@@ -93,3 +93,46 @@ Aggregate a variable of the data by state and join that to a map_data object, an
 #Your code here
 ```
 
+__Vectorization__
+
+When it comes to vector arithmetic, R is pretty straightforward because it uses element-wise arithmetic. One special aspect of R is that it is conducive to something called _vector recycling_. 
+
+For example, if we have some temperatures in Celsius
+
+```{r}
+alpha <- c(6, 420, 89, 3429990, 666, -294)
+```
+and we want to convert to temperatures in Kelvin. We know $Kelvin = Celsius + 273.15$. 
+
+Instead of adding a vector, beta, to alpha, where
+```{r}
+beta <- c(273.15, 273.15, 273.15, 273.15, 273.15, 273.15)
+```
+we can write
+```{r}
+alpha + 273.15 #which is the same value as
+alpha + beta #but is much easier to write
+```
+Vector recycling is iterative. Look at what the following statements return:
+
+```{r}
+c(6, 5, 4, 3, 2, 1) + c(-3,2)
+```
+The command above is interpreted as adding values of a secondary vector to each subsequent element in the first vector. Since the vectors are different sizes we just add the values of the smaller length vector repeatedly until we have added a value to each element of the larger length vector.
+
+```{r}
+c(5, 4, 3, 2, 1) + c(-3,2)
+```
+The command above tries the same logic but it cannot fully parse through the smaller length vector an integer number of times. Thus we get the warning prompt.
+
+#Your turn
+
+What are 2 ways that we could manipulate vector gamma into vector delta?
+```{r}
+gamma <- c(45, 2, 98, 33, 67, 1)
+delta <- c(-3, 10, 40, 41, 19, 9)
+YOUR CODE HERE
+```
+
+
+
