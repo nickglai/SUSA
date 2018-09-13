@@ -14,6 +14,7 @@ library(ggplot2) #data visualization framework
 library(dplyr) #tidy data
 library(viridis) #Colorblind-friendly gradients
 ```
+__Welcome to R!__
 
 One of the most common uses of R is to generate beautiful data visualizations. In fact, many professional data journalism outfits such as FiveThirtyEight and The New York Times use R to create their graphics. 
 
@@ -93,25 +94,21 @@ Aggregate a variable of the data by state and join that to a map_data object, an
 #Your code here
 ```
 
-__Vectorization__
+#Vectorization
 
 When it comes to vector arithmetic, R is pretty straightforward because it uses element-wise arithmetic. One special aspect of R is that it is conducive to something called _vector recycling_. 
 
-For example, if we have some temperatures in Celsius
+For example, say we have some temperatures in Celsius
 
 ```{r}
 alpha <- c(6, 420, 89, 3429990, 666, -294)
 ```
 and we want to convert to temperatures in Kelvin. We know $Kelvin = Celsius + 273.15$. 
 
-Instead of adding a vector, beta, to alpha, where
+R makes this easy to do:
+
 ```{r}
-beta <- c(273.15, 273.15, 273.15, 273.15, 273.15, 273.15)
-```
-we can write
-```{r}
-alpha + 273.15 #which is the same value as
-alpha + beta #but is much easier to write
+alpha + 273.15 #adds 273.15 to each component in alpha
 ```
 Vector recycling is iterative. Look at what the following statements return:
 
@@ -127,7 +124,7 @@ The command above tries the same logic but it cannot fully parse through the sma
 
 #Your turn
 
-What are 2 ways that we could manipulate vector gamma into vector delta?
+What is an easy way to manipulate gamma into delta (what vector arithmetic can be performed on alpha to get beta)?
 ```{r}
 gamma <- c(45, 2, 98, 33, 67, 1)
 delta <- c(-3, 10, 40, 41, 19, 9)
