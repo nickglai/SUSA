@@ -128,7 +128,7 @@ What is an easy way to manipulate gamma into delta (what vector arithmetic can b
 ```{r}
 gamma <- c(45, 2, 98, 33, 67, 1)
 delta <- c(-3, 10, 40, 41, 19, 9)
-YOUR CODE HERE
+#Your code here
 ```
 
 
