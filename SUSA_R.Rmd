@@ -130,6 +130,32 @@ gamma <- c(45, 2, 98, 33, 67, 1)
 delta <- c(-3, 10, 40, 41, 19, 9)
 #Your code here
 ```
+#Formatting pretty equations: LaTex Syntax
 
+Let's derive the quadratic formula: $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+We start with a quadratic equation and look for its roots: $$ax^2 + bx + c = 0$$
+
+Now multiply both sides by $4a$: 
+$Your code here$
+
+Then add $b^2 - 4ac$ to both sides:
+$Your code here$
+
+Then factor the left hand side into a square:
+$$(2ax + b)^2 = b^2 - 4ac$$
+
+Then take the square root of each side:
+Hint: $\pm$ gives a plus or minus sign, $\sqrt{w}$ gives square root
+$Your code here$
+
+Then subtract $b$ from each side:
+$$2ax = -b \pm \sqrt{b^2 - 4ac}$$
+
+Then solve for x:
+Hint: $\frac{u}{v}$ gives a pretty fraction.
+$Your code here$
+
+Nicely done.
 
 
