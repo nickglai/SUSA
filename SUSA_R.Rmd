@@ -48,6 +48,7 @@ anotherVectorInCamelCase <- c("S", "U", "S", "A")
 anotherVectorInCamelCase
 #vectors can be logical
 one-more-vector <- c(TRUE, FALSE)
+one-more-vector
 ```
 
 When it comes to vector arithmetic, R is pretty straightforward because it uses element-wise arithmetic. One special aspect of R is that it is conducive to something called _vector recycling_. 
