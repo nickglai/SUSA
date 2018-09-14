@@ -20,6 +20,36 @@ Let's begin with some R basics.
 
 #Vectorization
 
+We create vectors by writing VECTORNAME <- c( , , , ). The c refers to "concatenate."
+
+Some vector names are not valid:
+
+```{r}
+#cannot start with a number
+5variable <- 5
+
+#cannot start with an underscore
+_invalid <- 10
+
+#cannot contain a comma
+my,variable <- 3
+
+#and cannot contain spaces
+my variable <- 1
+```
+
+Everything else is fair game!
+
+```{r}
+vector_name_that_is_acceptable_but_too_long <- c(1,2,3,4)
+vector_name_that_is_acceptable_but_too_long
+#vectors don't have to be numeric
+anotherVectorInCamelCase <- c("S", "U", "S", "A")
+anotherVectorInCamelCase
+#vectors can be logical
+one-more-vector <- c(TRUE, FALSE)
+```
+
 When it comes to vector arithmetic, R is pretty straightforward because it uses element-wise arithmetic. One special aspect of R is that it is conducive to something called _vector recycling_. 
 
 For example, say we have some temperatures in Celsius
@@ -58,25 +88,6 @@ delta <- c(-3, 10, 40, 41, 19, 9)
 __Vector Coercion__
 
 Vectors are atomic structures (meaning their components must all be of the same type). If you mix data types, vectors undergo coercion. So be careful to only enter values of the same datatype when making a vector.
-
-We create vectors by writing VECTORNAME <- c( , , , ). The c refers to "concatenate."
-
-Some vector names are not valid:
-
-```{r}
-#cannot start with a number
-5variable <- 5
-
-#cannot start with an underscore
-_invalid <- 10
-
-#cannot contain a comma
-my,variable <- 3
-
-#and cannot contain spaces
-my variable <- 1
-```
-Everything else is fair game!
 
 Suppose we mix logical components with numeric ones:
 
