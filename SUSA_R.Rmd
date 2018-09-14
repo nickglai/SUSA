@@ -59,11 +59,31 @@ __Vector Coercion__
 
 Vectors are atomic structures (meaning their components must all be of the same type). If you mix data types, vectors undergo coercion. So be careful to only enter values of the same datatype when making a vector.
 
+We create vectors by writing VECTORNAME <- c( , , , ). The c refers to "concatenate."
+
+Some vector names are not valid:
+
+```{r}
+#cannot start with a number
+5variable <- 5
+
+#cannot start with an underscore
+_invalid <- 10
+
+#cannot contain a comma
+my,variable <- 3
+
+#and cannot contain spaces
+my variable <- 1
+```
+Everything else is fair game!
+
 Suppose we mix logical components with numeric ones:
 
 ```{r}
 v <- c(TRUE, FALSE, 56, 72)
 v
+typeof(v)
 ```
 Then the vector becomes numeric because it must choose a single datatype.
 
@@ -72,6 +92,7 @@ Suppose we mix characters with numeric:
 ```{r}
 w <- c("bone", "apple", "tea", 4, 2, 0)
 w
+typeof(w)
 ```
 
 Then the vector becomes a string vector. What happens if we mix logicals (TRUE, FALSE) with characters ("strings")?
