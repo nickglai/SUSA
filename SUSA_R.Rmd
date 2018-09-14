@@ -147,8 +147,6 @@ $Your code here$ And you're done!
 
 One of the most common uses of R is to generate beautiful data visualizations. In fact, many professional data journalism outfits such as FiveThirtyEight and The New York Times use R to create their graphics. 
 
-Today, we will be creating a graph of the United States by county. This may sound like a daunting first task, but because of the wonderful packages that the R community has produced, it will become clear that doing so is quite managable. 
-
 Here's one of the simplest things you can do in R, without the ggplot library:
 Suppose I have data from a survey of 15 SUSA members' heights and weights.
 
@@ -171,6 +169,8 @@ title(main = "Scatterplot of Height vs. Price", col.main = "orange", xlab = "wei
 points(weights, heights, pch = 18, col = "red", cex = .75)
 #You can alter the pch value to get different dots! Try different pch values from 0 to 25.
 ```
+
+Today, we will be creating a graph of the United States by county. This may sound like a daunting first task, but because of the wonderful packages that the R community has produced, it will become clear that doing so is quite managable. 
 
 #Getting the Map
 
