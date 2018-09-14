@@ -154,7 +154,7 @@ Then the vector becomes a string vector. What happens if we mix logicals (TRUE, 
 #You can make a guess or try out some code here to see for yourself.
 ```
 
-#Formatting pretty equations: LaTex Syntax
+#Formatting Equations with LaTex Syntax
 
 Let's derive the quadratic formula: $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
 
