@@ -49,6 +49,10 @@ anotherVectorInCamelCase
 #vectors can be logical
 one-more-vector <- c(TRUE, FALSE)
 one-more-vector
+#and case is important
+iOnlyLoveMyBedAndMyMommaImSorry <- 99
+ionlylovemybedandmymommaimsorry <- -22
+iOnlyLoveMyBedAndMyMommaImSorry + ionlylovemybedandmymommaimsorry
 ```
 
 When it comes to vector arithmetic, R is pretty straightforward because it uses element-wise arithmetic. One special aspect of R is that it is conducive to something called _vector recycling_. 
@@ -144,6 +148,29 @@ $Your code here$ And you're done!
 One of the most common uses of R is to generate beautiful data visualizations. In fact, many professional data journalism outfits such as FiveThirtyEight and The New York Times use R to create their graphics. 
 
 Today, we will be creating a graph of the United States by county. This may sound like a daunting first task, but because of the wonderful packages that the R community has produced, it will become clear that doing so is quite managable. 
+
+Here's one of the simplest things you can do in R, without the ggplot library:
+Suppose I have data from a survey of 15 SUSA members' heights and weights.
+
+```{r}
+heights <- c(70, 50, 66, 54, 72, 60, 62, 55, 69, 69, 55, 58, 59, 61, 63)
+weights <- c(120, 100, 99, 150, 198, 170, 122, 130, 140, 166, 111, 112, 157, 143, 189)
+plot(weights, heights)
+```
+
+And we can up the ante a bit.
+
+```{r}
+heights <- c(70, 50, 66, 54, 72, 60, 62, 55, 69, 69, 55, 58, 59, 61, 63)
+weights <- c(120, 100, 99, 150, 198, 170, 122, 130, 140, 166, 111, 112, 157, 143, 189)
+plot.new()
+plot.window(xlim = c(80,210), ylim = c(40,80), xaxs = "i")
+axis(1, col.axis = "grey30")
+axis(2, col.axis = "grey30", las = 1)
+title(main = "Scatterplot of Height vs. Price", col.main = "orange", xlab = "weight", ylab = "height", col.lab = "blue", font.lab = 3)
+points(weights, heights, pch = 18, col = "red", cex = .75)
+#You can alter the pch value to get different dots! Try different pch values from 0 to 25.
+```
 
 #Getting the Map
 
