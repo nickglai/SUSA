@@ -139,6 +139,8 @@ Then solve for x:
 Hint: $\frac{u}{v}$ gives a pretty fraction.
 $Your code here$ And you're done!
 
+#Graph time!
+
 One of the most common uses of R is to generate beautiful data visualizations. In fact, many professional data journalism outfits such as FiveThirtyEight and The New York Times use R to create their graphics. 
 
 Today, we will be creating a graph of the United States by county. This may sound like a daunting first task, but because of the wonderful packages that the R community has produced, it will become clear that doing so is quite managable. 
