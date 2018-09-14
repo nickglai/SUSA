@@ -144,12 +144,14 @@ v
 Then the vector becomes numeric because it must choose a single datatype.
 
 Suppose we mix characters with numeric:
+
 ```{r}
 w <- c("bone", "apple", "tea", 4, 2, 0)
 w
 ```
 
 Then the vector becomes a string vector. What happens if we mix logicals (TRUE, FALSE) with characters ("strings")?
+
 ```{r}
 #You can make a guess or try out some code here to see for yourself.
 ```
