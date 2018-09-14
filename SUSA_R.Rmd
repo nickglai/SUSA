@@ -130,6 +130,30 @@ gamma <- c(45, 2, 98, 33, 67, 1)
 delta <- c(-3, 10, 40, 41, 19, 9)
 #Your code here
 ```
+
+__Vector Coercion__
+
+Vectors are atomic structures (meaning their components must all be of the same type). If you mix data types, vectors undergo coercion. So be careful to only enter values of the same datatype when making a vector.
+
+Suppose we mix logical components with numeric ones:
+
+```{r}
+v <- c(TRUE, FALSE, 56, 72)
+v
+```
+Then the vector becomes numeric because it must choose a single datatype.
+
+Suppose we mix characters with numeric:
+```{r}
+w <- c("bone", "apple", "tea", 4, 2, 0)
+w
+```
+
+Then the vector becomes a string vector. What happens if we mix logicals (TRUE, FALSE) with characters ("strings")?
+```{r}
+#You can make a guess or try out some code here to see for yourself.
+```
+
 #Formatting pretty equations: LaTex Syntax
 
 Let's derive the quadratic formula: $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
@@ -154,8 +178,6 @@ $$2ax = -b \pm \sqrt{b^2 - 4ac}$$
 
 Then solve for x:
 Hint: $\frac{u}{v}$ gives a pretty fraction.
-$Your code here$
-
-Nicely done.
+$Your code here$ And you're done!
 
 
